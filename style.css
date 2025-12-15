@@ -1,0 +1,144 @@
+/* ================================
+   Mobile responsiveness enhancements
+   (keeps same design, only adapts sizes)
+================================ */
+
+/* Make media behave safely on small screens */
+img, video, canvas {
+  max-width: 100%;
+}
+
+/* Prevent any accidental horizontal scroll from large glows/orbits */
+body {
+  overflow-x: hidden;
+}
+
+/* Better tap experience on touch devices (doesn't affect desktop) */
+@media (hover: none) and (pointer: coarse) {
+  * { cursor: auto; } /* mobile doesn't use cursor anyway */
+}
+
+/* Tablet / small laptop refinements */
+@media (max-width: 900px) {
+  .hero {
+    padding-top: 100px; /* more space for fixed nav on smaller screens */
+  }
+
+  .hero-grid {
+    gap: 35px;
+  }
+
+  .typewriter-text {
+    font-size: 1.25rem;
+  }
+}
+
+/* Phone */
+@media (max-width: 600px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  nav {
+    padding: 14px 0;
+  }
+
+  .nav-content {
+    gap: 12px;
+  }
+
+  .hero {
+    padding-top: 95px;
+    padding-bottom: 30px;
+  }
+
+  .hero h2 {
+    font-size: 1rem;
+    letter-spacing: 1.5px;
+  }
+
+  .hero h1 {
+    font-size: 2.6rem; /* keeps your look, just scales down */
+    line-height: 1.12;
+  }
+
+  .typewriter-text {
+    font-size: 1.15rem;
+    margin-bottom: 28px;
+  }
+
+  /* Ensure the paragraph doesn't feel cramped */
+  .hero-text p {
+    max-width: 100% !important;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  /* Scale hero image + orbit proportionally to screen width */
+  .hero-img {
+    width: min(320px, 78vw);
+    height: min(340px, 78vw);
+  }
+
+  .orbit {
+    width: min(380px, 88vw);
+    height: min(380px, 88vw);
+  }
+
+  /* Reduce section spacing slightly for phones */
+  .section-padding {
+    padding: 70px 0;
+  }
+
+  /* Cards padding adjustment for small screens (same style, better fit) */
+  .glass-card {
+    padding: 22px;
+    border-radius: 18px;
+  }
+
+  .project-content {
+    padding: 20px;
+  }
+
+  /* Project text spacing on mobile (prevents huge gaps) */
+  .project-content p {
+    margin: 22px 0 !important;
+  }
+
+  /* Timeline padding fits better */
+  section .container > div[style*="border-left"] {
+    padding-left: 22px !important;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 420px) {
+  .hero h1 {
+    font-size: 2.25rem;
+  }
+
+  .btn {
+    padding: 12px 26px;
+    font-size: 0.85rem;
+  }
+
+  /* Make hero buttons stack nicely when space is tight */
+  .hero-text > div[style*="display: flex"] {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hero-text > div[style*="display: flex"] .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .social-btn {
+    width: 46px;
+    height: 46px;
+  }
+
+  .project-tags span {
+    padding: 7px 12px;
+    margin-right: 6px;
+  }
+}
