@@ -1285,3 +1285,164 @@ body {
     margin: 0 auto;
   }
 }
+
+/* =====================================================
+   VISUAL ENHANCEMENT LAYER (DESIGN ONLY)
+   — NO LOGIC / NO STRUCTURE CHANGES
+===================================================== */
+
+/* ---------- GLOBAL POLISH ---------- */
+body {
+  letter-spacing: 0.3px;
+}
+
+h1, h2, h3 {
+  text-shadow: 0 0 25px rgba(0,242,234,0.15);
+}
+
+p {
+  text-rendering: optimizeLegibility;
+}
+
+/* ---------- SECTION DEPTH ---------- */
+.section-padding {
+  position: relative;
+}
+
+.section-padding::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 15%;
+  width: 70%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0,242,234,0.35), transparent);
+}
+
+/* ---------- GLASS CARD UPGRADE ---------- */
+.glass-card {
+  box-shadow:
+    inset 0 0 30px rgba(255,255,255,0.02),
+    0 15px 45px rgba(0,242,234,0.12);
+}
+
+.glass-card:hover {
+  transform: translateY(-6px) scale(1.01);
+}
+
+/* ---------- HERO TEXT ENHANCEMENT ---------- */
+.hero h1 {
+  background: linear-gradient(135deg, #ffffff 0%, var(--primary) 60%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero h2 {
+  opacity: 0.9;
+}
+
+/* ---------- HERO IMAGE DEPTH ---------- */
+.hero-img {
+  filter: contrast(1.05) saturate(1.05);
+}
+
+.orbit {
+  filter: drop-shadow(0 0 35px rgba(0,242,234,0.35));
+}
+
+/* ---------- SOCIAL ICON PREMIUM EFFECT ---------- */
+.social-btn {
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.social-btn:hover {
+  box-shadow:
+    0 0 30px rgba(0,242,234,0.8),
+    inset 0 0 20px rgba(255,255,255,0.1);
+}
+
+/* ---------- SKILL CARDS ---------- */
+.skill-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top,
+    rgba(0,242,234,0.15),
+    transparent 60%);
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.skill-card:hover::after {
+  opacity: 1;
+}
+
+/* ---------- PROJECT CARD CINEMATIC ---------- */
+.project-card {
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+
+.project-card:hover {
+  transform: translateY(-14px) scale(1.015);
+}
+
+.project-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.75),
+    transparent 55%
+  );
+  pointer-events: none;
+}
+
+/* ---------- PROJECT TITLE EMPHASIS ---------- */
+.project-content h3 {
+  letter-spacing: 0.6px;
+}
+
+/* ---------- CONTACT SECTION ELEVATION ---------- */
+.contact-info-card,
+.contact-form-card {
+  box-shadow:
+    0 25px 70px rgba(0,0,0,0.65),
+    inset 0 0 40px rgba(255,255,255,0.02);
+}
+
+.contact-form-card button {
+  font-size: 0.95rem;
+  letter-spacing: 1.2px;
+}
+
+/* ---------- FOOTER GLOW ---------- */
+footer {
+  position: relative;
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10%;
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0,242,234,0.5),
+    transparent
+  );
+}
+
+/* ---------- MICRO INTERACTION SMOOTHING ---------- */
+* {
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
