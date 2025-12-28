@@ -1446,3 +1446,41 @@ footer::before {
 * {
   transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
 }
+
+/* =====================================================
+   SMOOTH SCROLLING & MOTION POLISH (CSS ONLY)
+===================================================== */
+
+/* Native smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Reduce harsh jumps on anchor navigation */
+section {
+  scroll-margin-top: 100px; /* accounts for fixed navbar */
+}
+
+/* Subtle motion easing globally */
+* {
+  transition-property: transform, opacity, box-shadow, background, color;
+  transition-duration: 0.45s;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Scroll reveal base (enhanced, but compatible with your JS) */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Gentle parallax feel on large sections */
+.hero,
+.section-padding {
+  will-change: transform;
+}
