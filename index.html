@@ -544,6 +544,29 @@
             }, 500); // Wait for the fade out transition (0.5s)
         });
 
+/* =====================================================
+   LIGHTWEIGHT SMOOTH SCROLL (NO LAG)
+===================================================== */
+
+// Native smooth scrolling (fast & GPU-optimized)
+document.documentElement.style.scrollBehavior = "smooth";
+
+// Subtle scroll-based easing (visual only, not scroll position)
+const smoothItems = document.querySelectorAll(
+  ".glass-card, .project-card, .hero-img-wrapper"
+);
+
+window.addEventListener("scroll", () => {
+  const scrollY = window.scrollY;
+
+  smoothItems.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    const offset = rect.top * 0.03;
+    el.style.transform = `translateY(${offset}px)`;
+  });
+}, { passive: true });
+
+        
     </script>
 
 
