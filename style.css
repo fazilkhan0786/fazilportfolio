@@ -1484,3 +1484,23 @@ section {
 .section-padding {
   will-change: transform;
 }
+
+/* =====================================================
+   SMOOTH SCROLLING (PERFORMANCE SAFE)
+===================================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Improve scroll feel */
+body {
+  overscroll-behavior: none;
+}
+
+/* Reveal easing (already compatible with your JS) */
+.reveal {
+  transition:
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
